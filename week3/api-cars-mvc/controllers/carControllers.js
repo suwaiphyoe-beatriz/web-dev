@@ -8,12 +8,11 @@ const getAllCars = (req, res) => {
 
 // POST /cars
 const createCar = (req, res) => {
-  const newCar = Car.addOne({ ...req.body }); // Spread the req.body object
+  const newCar = Car.addOne({ ...req.body }); 
 
   if (newCar) {
     res.json(newCar);
   } else {
-    // Handle error (e.g., failed to create car)
     res.status(500).json({ message: "Failed to create car" });
   }
 };
@@ -37,7 +36,6 @@ const updateCar = (req, res) => {
   if (updatedCar) {
     res.json(updatedCar);
   } else {
-    // Handle update failure (e.g., car not found)
     res.status(404).json({ message: "Car not found" });
   }
 };
@@ -50,7 +48,6 @@ const deleteCar = (req, res) => {
   if (isDeleted) {
     res.json({ message: "Car deleted successfully" });
   } else {
-    // Handle deletion failure (e.g., car not found)
     res.status(404).json({ message: "Car not found" });
   }
 };

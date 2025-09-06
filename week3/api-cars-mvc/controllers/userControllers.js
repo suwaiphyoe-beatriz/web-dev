@@ -12,7 +12,6 @@ const createUser = (req, res) => {
   if (newUser) {
     res.json(newUser);
   } else {
-    // Handle error (e.g., failed to create car)
     res.status(500).json({ message: "Failed to create user" });
   }
 };
