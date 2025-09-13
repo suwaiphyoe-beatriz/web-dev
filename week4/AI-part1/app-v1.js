@@ -4,7 +4,6 @@ const app = express();
 dotenv.config();
 const generateText  = require("./controllers/textController");
 // console.log("GEMINI API KEY:", process.env.GEMINI_API_KEY ? "Loaded ✅" : "Not Found ❌");
-
 app.use(express.json());
 
 app.get("/", (req, res) => {
